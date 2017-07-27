@@ -3,7 +3,9 @@
 Calculate various statistics from an Oxford Nanopore dataset in fastq, bam or albacore sequencing summary format.
 
 ### INSTALLATION
-```pip install nanostat```
+```bash
+pip install nanostat
+```
 
 ### USAGE
 ```
