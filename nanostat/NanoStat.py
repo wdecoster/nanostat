@@ -46,7 +46,8 @@ def getInput(args):
     '''
     Get input and process accordingly.     Data can be:
     -a uncompressed, bgzip, bzip2 or gzip compressed fastq file
-    -s sorted bam file
+    -a sorted bam file
+    -a summary file from albacore 
     Filename is passed to the proper functions to get DataFrame with metrics
     '''
     if args.fastq:
