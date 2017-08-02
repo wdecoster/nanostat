@@ -7,7 +7,7 @@ Calculate various statistics from an Oxford Nanopore dataset in fastq, bam or al
 pip install nanostat
 ```
 or  
-![install with conda](https://anaconda.org/bioconda/nanostat/badges/installer/conda.svg)
+[![install with conda](https://anaconda.org/bioconda/nanostat/badges/installer/conda.svg)](https://anaconda.org/bioconda/nanofilt)
 ```
 conda install -c bioconda nanostat
 ```
