@@ -33,6 +33,9 @@ Optional arguments:
   -t, --threads THREADS Set the allowed number of threads to be used by the script
 ```
 
+## STATUS
+[![Build Status](https://travis-ci.org/wdecoster/nanostat.svg?branch=master)](https://travis-ci.org/wdecoster/nanostat)
+
 ### Example output
 ```
 Number of reads:	408254
