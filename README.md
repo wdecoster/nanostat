@@ -37,7 +37,8 @@ Optional arguments:
 ```
 
 ## STATUS
-[![Build Status](https://travis-ci.org/wdecoster/nanostat.svg?branch=master)](https://travis-ci.org/wdecoster/nanostat)
+[![Build Status](https://travis-ci.org/wdecoster/nanostat.svg?branch=master)](https://travis-ci.org/wdecoster/nanostat) [![Code Health](https://landscape.io/github/wdecoster/nanostat/master/landscape.svg?style=flat)](https://landscape.io/github/wdecoster/nanostat/master)
+
 
 ### Example output
 ```
