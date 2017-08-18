@@ -55,7 +55,7 @@ def getInput(args):
     elif args.bam:
         return nanoget.processBam(args.bam, args.threads)
     elif args.summary:
-        return nanoget.processSumary(args.summary)
+        return nanoget.processSummary(args.summary)
 
 if __name__ == '__main__':
     main()
