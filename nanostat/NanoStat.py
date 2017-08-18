@@ -32,6 +32,10 @@ def getArgs():
                         help="Set the allowed number of threads to be used by the script",
                         default=4,
                         type=int)
+    parser.add_argument("--readtype",
+                        help="Which read type to extract information about from summary. Options are 1D, 2D, 1D2",
+                        default="1D",
+                        choices=['1D', '2D', '1D2'])
     target = parser.add_mutually_exclusive_group(required=True)
     target.add_argument("--fastq",
                         help="Data is in fastq format.")
@@ -47,7 +51,7 @@ def getInput(args):
     Get input and process accordingly.     Data can be:
     -a uncompressed, bgzip, bzip2 or gzip compressed fastq file
     -a sorted bam file
-    -a summary file from albacore 
+    -a summary file from albacore
     Filename is passed to the proper functions to get DataFrame with metrics
     '''
     if args.fastq:
@@ -55,7 +59,7 @@ def getInput(args):
     elif args.bam:
         return nanoget.processBam(args.bam, args.threads)
     elif args.summary:
-        return nanoget.processSummary(args.summary)
+        return nanoget.processSummary(args.summary, args.readtype)
 
 if __name__ == '__main__':
     main()
