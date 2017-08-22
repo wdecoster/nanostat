@@ -5,8 +5,9 @@ import nanomath
 import nanoget
 import argparse
 import os
-#from .version import __version__
+#  from .version import __version__
 __version__ = "0.0.1"
+
 
 def main():
     args = getArgs()
@@ -14,6 +15,7 @@ def main():
         os.makedirs(args.outdir)
     datadf = getInput(args)
     nanomath.writeStats(datadf, os.path.join(args.outdir, args.prefix + "NanoStats.txt"))
+
 
 def getArgs():
     parser = argparse.ArgumentParser(description="Get statistics of Oxford Nanopore read dataset.")
@@ -33,7 +35,8 @@ def getArgs():
                         default=4,
                         type=int)
     parser.add_argument("--readtype",
-                        help="Which read type to extract information about from summary. Options are 1D, 2D, 1D2",
+                        help="Which read type to extract information about from summary. \
+                              Options are 1D, 2D, 1D2",
                         default="1D",
                         choices=['1D', '2D', '1D2'])
     target = parser.add_mutually_exclusive_group(required=True)
@@ -60,6 +63,7 @@ def getInput(args):
         return nanoget.processBam(args.bam, args.threads)
     elif args.summary:
         return nanoget.processSummary(args.summary, args.readtype)
+
 
 if __name__ == '__main__':
     main()
