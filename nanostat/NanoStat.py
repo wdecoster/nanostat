@@ -59,7 +59,7 @@ def getInput(args):
     Filename is passed to the proper functions to get DataFrame with metrics
     '''
     if args.fastq:
-        return nanoget.processFastqPlain(args.fastq)
+        return nanoget.processFastqPlain(args.fastq, args.threads)
     elif args.bam:
         return nanoget.processBam(args.bam, args.threads)
     elif args.summary:

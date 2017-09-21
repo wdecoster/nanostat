@@ -40,7 +40,7 @@ Optional arguments:
   -o, --outdir OUTDIR   Specify directory in which output has to be created.
   -p, --prefix PREFIX   Specify an optional prefix to be used for the output files.
   -t, --threads THREADS Set the allowed number of threads to be used by the script
-                        This only applies to bam format as data source, the rest uses one thread by default
+                        This only applies to bam and fastq format as data source
 ```
 
 ## STATUS
