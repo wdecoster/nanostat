@@ -5,8 +5,7 @@ import nanomath
 import nanoget
 import argparse
 import os
-#  from .version import __version__
-__version__ = "0.0.1"
+from nanostat.version import __version__
 
 
 def main():
@@ -31,7 +30,9 @@ def getArgs():
                         default="",
                         type=str)
     parser.add_argument("-t", "--threads",
-                        help="Set the allowed number of threads to be used by the script",
+                        help="Set the allowed number of threads to be used by the script. \
+                        This only applies to bam format as data source, \
+                        the rest uses one thread by default",
                         default=4,
                         type=int)
     parser.add_argument("--readtype",
