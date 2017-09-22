@@ -13,7 +13,11 @@ def main():
     if not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
     datadf = getInput(args)
-    nanomath.writeStats(datadf, os.path.join(args.outdir, args.prefix + "NanoStats.txt"))
+    if args.name:
+        output = args.name
+    else:
+        output = os.path.join(args.outdir, args.prefix + "NanoStats.txt")
+    nanomath.writeStats(datadf, output)
 
 
 def getArgs():
@@ -26,7 +30,12 @@ def getArgs():
                         help="Specify directory in which output has to be created.",
                         default=".")
     parser.add_argument("-p", "--prefix",
-                        help="Specify an optional prefix to be used for the output files.",
+                        help="Specify an optional prefix to be used for the output file.",
+                        default="",
+                        type=str)
+    parser.add_argument("-n", "--name",
+                        help="Specify a custom filename/path for the output, \
+                        <stdout> for printing to stdout.",
                         default="",
                         type=str)
     parser.add_argument("-t", "--threads",

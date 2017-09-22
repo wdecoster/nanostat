@@ -33,11 +33,13 @@ Mandatory one of the following data sources:
 
 
 Optional arguments:
-  --readtype              Specify read type to extract from summary file
+  --readtype            Specify read type to extract from summary file
                         Options: 1D (default), 2D or 1D2
   -h, --help            show this help message and exit
   -v, --version         Print version and exit.
   -o, --outdir OUTDIR   Specify directory in which output has to be created.
+  -n, --name NAME       Specify a custom filename/path for the output,
+                        <stdout> for printing to stdout.
   -p, --prefix PREFIX   Specify an optional prefix to be used for the output files.
   -t, --threads THREADS Set the allowed number of threads to be used by the script
                         This only applies to bam and fastq format as data source
