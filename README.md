@@ -52,29 +52,38 @@ Optional arguments:
 
 ### Example output
 ```
-Number of reads:	408254
-Total bases:	3508315665
-Median read length:	5168.0
-Mean read length:	8593.46
-Readlength N50:	39346
+Number of reads:        99875
+Total bases:    779100562
+Median read length:     5456.0
+Mean read length:       7800.76
+Readlength N50: 12658
 
 Top 5 read lengths and their average basecall quality score:
-Length: 255821bp	Q: 6.84
-Length: 254573bp	Q: 7.09
-Length: 253711bp	Q: 6.96
-Length: 245784bp	Q: 6.98
-Length: 245776bp	Q: 7.06
+Length: 299625bp        Q: 10.36
+Length: 272879bp        Q: 9.99
+Length: 271441bp        Q: 10.94
+Length: 261038bp        Q: 8.0
+Length: 250267bp        Q: 7.74
 
 Top 5 average basecall quality scores and their read lengths:
-Length: 407bp	Q: 16.22
-Length: 880bp	Q: 16.18
-Length: 729bp	Q: 16.12
-Length: 1057bp	Q: 16.08
-Length: 841bp	Q: 15.84
+Length: 1455bp  Q: 16.54
+Length: 3634bp  Q: 16.48
+Length: 733bp   Q: 16.23
+Length: 515bp   Q: 16.2
+Length: 909bp   Q: 15.89
 
 Number of reads and fraction above quality cutoffs:
-Q5:	406428	99.55%
-Q10:	305509	74.83%
-Q15:	124	0.03%
-Q20:	0	0.0%
+Q5:     88489   88.6%
+Q10:    61809   61.89%
+Q15:    175     0.18%
+Q20:    0       0.0%
+
+Data produced using 512 active channels.
+
+Data was produced in run(s) with ID:
+002dc25e406b22dd8e4d2a5ee83dcbb67072e10d
+005aaa922c42c455c07a472a9c30f0209f1b0d93
+00b31b64541f79ff1f562c3e3602d3f265cd3b05
+00c9faabd00f4676a2255da178a62c1fe6ae061b
+00f9dec9cb591f4cb4c60c129f87faf731323386
 ```
