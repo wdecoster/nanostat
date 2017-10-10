@@ -69,8 +69,7 @@ def get_args():
                         type=str)
     parser.add_argument("-t", "--threads",
                         help="Set the allowed number of threads to be used by the script. \
-                        This only applies to bam and fastq format as data source, \
-                        the rest uses one thread by default",
+                        This only applies to bam and fastq format as data source",
                         default=4,
                         type=int)
     parser.add_argument("--readtype",
