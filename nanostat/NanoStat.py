@@ -34,6 +34,7 @@ from nanomath import write_stats
 import nanoget
 from argparse import ArgumentParser
 import os
+import pandas as pd
 from nanostat.version import __version__
 
 
@@ -96,11 +97,17 @@ def get_input(args):
     Filename is passed to the proper functions to get DataFrame with metrics
     '''
     if args.fastq:
-        return nanoget.process_fastq_plain(args.fastq, args.threads)
+        return pd.concat(
+            [nanoget.process_fastq_plain(inp, args.threads) for inp in args.fastq],
+            ignore_index=True)
     elif args.bam:
-        return nanoget.process_bam(args.bam, args.threads)
+        return pd.concat(
+            [nanoget.process_bam(inp, args.threads) for inp in args.bam],
+            ignore_index=True)
     elif args.summary:
-        return nanoget.process_summary(args.summary, args.readtype)
+        return pd.concat(
+            [nanoget.process_summary(inp, args.readtype) for inp in args.summary],
+            ignore_index=True)
 
 
 if __name__ == '__main__':
