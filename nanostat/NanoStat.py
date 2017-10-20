@@ -41,7 +41,15 @@ def main():
     args = get_args()
     if not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
-    datadf = get_input(args)
+    sources = [args.fastq, args.bam, args.summary]
+    sourcename = ["fastq", "bam", "summary"]
+    datadf = nanoget.get_input(
+        source=[n for n, s in zip(sourcename, sources) if s][0],
+        files=[f for f in [args.fastq, args.bam, args.summary] if f][0],
+        threads=args.threads,
+        readtype=args.readtype,
+        names=args.names,
+        combine="track")
     if args.name:
         output = args.name
     else:
@@ -85,22 +93,6 @@ def get_args():
     target.add_argument("--bam",
                         help="Data as a sorted bam file.")
     return parser.parse_args()
-
-
-def get_input(args):
-    '''
-    Get input and process accordingly.     Data can be:
-    -a uncompressed, bgzip, bzip2 or gzip compressed fastq file
-    -a sorted bam file
-    -a summary file from albacore
-    Filename is passed to the proper functions to get DataFrame with metrics
-    '''
-    if args.fastq:
-        return nanoget.process_fastq_plain(args.fastq, args.threads)
-    elif args.bam:
-        return nanoget.process_bam(args.bam, args.threads)
-    elif args.summary:
-        return nanoget.process_summary(args.summary, args.readtype)
 
 
 if __name__ == '__main__':
