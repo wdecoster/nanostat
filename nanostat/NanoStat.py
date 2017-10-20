@@ -48,7 +48,6 @@ def main():
         files=[f for f in [args.fastq, args.bam, args.summary] if f][0],
         threads=args.threads,
         readtype=args.readtype,
-        names=args.names,
         combine="track")
     if args.name:
         output = args.name
