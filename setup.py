@@ -28,7 +28,7 @@ setup(
     ],
     keywords='nanopore sequencing statistics',
     packages=find_packages(),
-    install_requires=['nanoget>=0.10.1', 'nanomath>=0.12.0'],
+    install_requires=['nanoget>=0.15.0', 'nanomath>=0.13.3'],
     package_data={'NanoStat': []},
     package_dir={'nanostat': 'nanostat'},
     include_package_data=True,
