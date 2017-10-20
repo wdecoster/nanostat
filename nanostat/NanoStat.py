@@ -34,7 +34,6 @@ from nanomath import write_stats
 import nanoget
 from argparse import ArgumentParser
 import os
-import pandas as pd
 from nanostat.version import __version__
 
 
