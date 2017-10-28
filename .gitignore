@@ -1,1 +1,4 @@
 .remote-sync.json
+NanoStat.egg-info/
+README.rst
+nanostat/__pycache__/

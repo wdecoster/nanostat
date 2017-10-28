@@ -45,10 +45,12 @@ Optional arguments:
                         This only applies to bam and fastq format as data source
 ```
 
-## STATUS
-[![Build Status](https://travis-ci.org/wdecoster/nanostat.svg?branch=master)](https://travis-ci.org/wdecoster/nanostat)
-[![Code Health](https://landscape.io/github/wdecoster/nanostat/master/landscape.svg?style=flat)](https://landscape.io/github/wdecoster/nanostat/master)
-
+#### EXAMPLES
+```
+NanoStat --fastq reads.fastq.gz --outdir statreports
+NanoStat --summary sequencing_summary1.txt sequencing_summary2.txt sequencing_summary3.txt --readtype 1D2
+NanoStat --bam alignment.bam alignment2.bam
+```
 
 ### Example output
 ```
@@ -87,3 +89,5 @@ Data was produced in run(s) with ID:
 00c9faabd00f4676a2255da178a62c1fe6ae061b
 00f9dec9cb591f4cb4c60c129f87faf731323386
 ```
+
+I welcome all suggestions, bug reports, feature requests and contributions. Please leave an [issue](https://github.com/wdecoster/nanostat/issues) or open a pull request. I will usually respond within a day, or rarely within a few days.
