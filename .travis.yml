@@ -10,3 +10,9 @@ python:
 install: "pip install nanostat"
 # command to run tests
 script: NanoStat -h
+
+notifications:
+  email: false
+  webhooks:
+    urls:
+        - https://webhooks.gitter.im/e/4b1c45cea6826ce475c2
