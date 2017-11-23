@@ -2,3 +2,4 @@
 NanoStat.egg-info/
 README.rst
 nanostat/__pycache__/
+dist/
