@@ -66,7 +66,7 @@ def main():
     sourcename = ["fastq", "bam", "summary"]
     datadf = nanoget.get_input(
         source=[n for n, s in zip(sourcename, sources) if s][0],
-        files=[f for f in [args.fastq, args.bam, args.summary] if f][0],
+        files=[f for f in sources if f][0],
         threads=args.threads,
         readtype=args.readtype,
         combine="track")
@@ -74,7 +74,7 @@ def main():
         output = args.name
     else:
         output = os.path.join(args.outdir, args.prefix + "NanoStats.txt")
-    write_stats(datadf, output)
+    write_stats([datadf], output)
 
 
 def get_args():
