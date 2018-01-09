@@ -84,7 +84,7 @@ def get_args():
     NanoStat --bam alignment.bam alignment2.bam
     """
     parser = ArgumentParser(
-        description="Calculate statistics of Oxford Nanopore read dataset.",
+        description="Calculate statistics of long read sequencing dataset.",
         epilog=epilog,
         formatter_class=custom_formatter,
         add_help=False)

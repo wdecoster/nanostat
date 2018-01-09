@@ -1,6 +1,6 @@
 # NanoStat
 
-Calculate various statistics from an Oxford Nanopore dataset in fastq, bam or albacore sequencing summary format.
+Calculate various statistics from a long read sequencing dataset in fastq, bam or albacore sequencing summary format.
 
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/wouter_decoster.svg?style=social&label=Follow%20%40wouter_decoster)](https://twitter.com/wouter_decoster)
 [![install with conda](https://anaconda.org/bioconda/nanostat/badges/installer/conda.svg)](https://anaconda.org/bioconda/nanostat)
@@ -19,7 +19,6 @@ or
 NanoStat [-h] [-v] [-o OUTDIR] [-p PREFIX] [-t THREADS]
                 (--fastq FASTQ | --summary SUMMARY | --bam BAM)
 
-Get statistics of Oxford Nanopore read dataset.
 
 Mandatory one of the following data sources:
 --fastq FASTQ         Data is in fastq format.
