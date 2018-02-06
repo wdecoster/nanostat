@@ -71,18 +71,14 @@ def main():
         readtype=args.readtype,
         combine="track",
         barcoded=args.barcoded)
-    if args.name:
-        output = args.name
-    else:
-        output = os.path.join(args.outdir, args.prefix + "NanoStats.txt")
     if args.barcoded:
         barcodes = list(datadf["barcode"].unique())
         write_stats(
             datadfs=[datadf[datadf["barcode"] == b] for b in barcodes],
-            outputfile=os.path.join(args.outdir, args.prefix + "NanoStats_barcoded.txt"),
+            outputfile=args.name,
             names=barcodes)
     write_stats(datadfs=[datadf],
-                outputfile=output)
+                outputfile=args.name)
 
 
 def get_args():
@@ -113,8 +109,8 @@ def get_args():
                          default="",
                          type=str)
     general.add_argument("-n", "--name",
-                         help="Specify a custom filename/path for the output, <stdout> for printing to stdout.",
-                         default="",
+                         help="Specify a filename/path for the output, stdout is the default.",
+                         default="stdout",
                          type=str)
     general.add_argument("-t", "--threads",
                          help="Set the allowed number of threads to be used by the script.",
