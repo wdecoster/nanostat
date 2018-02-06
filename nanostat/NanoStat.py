@@ -69,12 +69,16 @@ def main():
         files=[f for f in sources if f][0],
         threads=args.threads,
         readtype=args.readtype,
-        combine="track")
-    if args.name:
-        output = args.name
-    else:
-        output = os.path.join(args.outdir, args.prefix + "NanoStats.txt")
-    write_stats([datadf], output)
+        combine="track",
+        barcoded=args.barcoded)
+    if args.barcoded:
+        barcodes = list(datadf["barcode"].unique())
+        write_stats(
+            datadfs=[datadf[datadf["barcode"] == b] for b in barcodes],
+            outputfile=args.name,
+            names=barcodes)
+    write_stats(datadfs=[datadf],
+                outputfile=args.name)
 
 
 def get_args():
@@ -105,8 +109,8 @@ def get_args():
                          default="",
                          type=str)
     general.add_argument("-n", "--name",
-                         help="Specify a custom filename/path for the output, <stdout> for printing to stdout.",
-                         default="",
+                         help="Specify a filename/path for the output, stdout is the default.",
+                         default="stdout",
                          type=str)
     general.add_argument("-t", "--threads",
                          help="Set the allowed number of threads to be used by the script.",
@@ -115,6 +119,9 @@ def get_args():
                          metavar="N")
     inputoptions = parser.add_argument_group(
         title='Input options.')
+    inputoptions.add_argument("--barcoded",
+                              help="Use if you want to split the summary file by barcode",
+                              action="store_true")
     inputoptions.add_argument("--readtype",
                               help="Which read type to extract information about from summary. \
                               Options are 1D, 2D, 1D2",
