@@ -5,7 +5,7 @@ Calculate various statistics from a long read sequencing dataset in fastq, bam o
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/wouter_decoster.svg?style=social&label=Follow%20%40wouter_decoster)](https://twitter.com/wouter_decoster)
 [![install with conda](https://anaconda.org/bioconda/nanostat/badges/installer/conda.svg)](https://anaconda.org/bioconda/nanostat)
 [![Build Status](https://travis-ci.org/wdecoster/nanostat.svg?branch=master)](https://travis-ci.org/wdecoster/nanostat)
-[![Code Health](https://landscape.io/github/wdecoster/nanostat/master/landscape.svg?style=flat)](https://landscape.io/github/wdecoster/nanostat/master)
+
 
 
 ### INSTALLATION
