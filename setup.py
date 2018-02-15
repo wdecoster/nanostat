@@ -27,7 +27,7 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     keywords='nanopore sequencing statistics',
-    packages=find_packages(),
+    packages=find_packages() + ['scripts'],
     python_requires='>=3',
     install_requires=['nanoget>=0.15.0', 'nanomath>=0.18.1'],
     package_data={'NanoStat': []},
