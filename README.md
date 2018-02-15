@@ -43,7 +43,8 @@ Optional arguments:
 ```
 NanoStat --fastq reads.fastq.gz --outdir statreports
 NanoStat --summary sequencing_summary1.txt sequencing_summary2.txt sequencing_summary3.txt --readtype 1D2
-NanoStat --bam alignment.bam alignment2.bam```
+NanoStat --bam alignment.bam alignment2.bam
+```
 
 ### Example output
 ```
