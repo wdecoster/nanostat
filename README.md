@@ -59,40 +59,33 @@ NanoStat --bam alignment.bam alignment2.bam
 
 ### Example output
 ```
-Number of reads:        99875
-Total bases:    779100562
-Median read length:     5456.0
-Mean read length:       7800.76
-Readlength N50: 12658
-
-Top 5 read lengths and their average basecall quality score:
-Length: 299625bp        Q: 10.36
-Length: 272879bp        Q: 9.99
-Length: 271441bp        Q: 10.94
-Length: 261038bp        Q: 8.0
-Length: 250267bp        Q: 7.74
-
-Top 5 average basecall quality scores and their read lengths:
-Length: 1455bp  Q: 16.54
-Length: 3634bp  Q: 16.48
-Length: 733bp   Q: 16.23
-Length: 515bp   Q: 16.2
-Length: 909bp   Q: 15.89
-
-Number of reads and fraction above quality cutoffs:
-Q5:     88489   88.6%
-Q10:    61809   61.89%
-Q15:    175     0.18%
-Q20:    0       0.0%
-
-Data produced using 512 active channels.
-
-Data was produced in run(s) with ID:
-002dc25e406b22dd8e4d2a5ee83dcbb67072e10d
-005aaa922c42c455c07a472a9c30f0209f1b0d93
-00b31b64541f79ff1f562c3e3602d3f265cd3b05
-00c9faabd00f4676a2255da178a62c1fe6ae061b
-00f9dec9cb591f4cb4c60c129f87faf731323386
+General summary:	 
+Number of reads:	3995
+Total bases:	11418359
+Median read length:	1221.0
+Mean read length:	2858.2
+Read length N50:	8676
+Active channels:	933
+Mean read quality:	10.2
+Median read quality:	10.6
+Top 5 longest reads and their mean basecall quality score
+1:	36928 (10.8, [a9dbd2b5-718c-4d0c-afa8-a12a54a5a12a])
+2:	32830 (10.2, [b87fc717-1cf8-4526-9f96-3042fda5b769])
+3:	30474 (12.4, [ea3e43d8-6cbf-4687-95bd-66e6123512d4])
+4:	27531 (12.5, [74c0e08c-eb94-4825-b93b-21d63e05cf14])
+5:	26535 (10.4, [8e6ed505-8477-4462-9f0a-3a72783cbf60])
+Top 5 highest mean basecall quality scores and their read lengths
+1:	14.8 (1040, [acf6f90b-ea22-4960-8049-6e6e694a3f9a])
+2:	14.7 (9603, [ec796da1-5c4a-4350-974b-6dabb8deb546])
+3:	14.6 (680, [792c485a-81cb-4ef7-8f23-01f10f9c7c23])
+4:	14.5 (2664, [d8092ffb-9919-42fb-ad41-34b1658f1bd5])
+5:	14.5 (909, [d55d3bf6-0729-4b46-82cd-0cef00bcf849])
+Number and percentage of reads above quality cutoffs
+>Q5:	3559 (89.1%)
+>Q7:	3429 (85.8%)
+>Q10:	2705 (67.7%)
+>Q12:	1072 (26.8%)
+>Q15:	0 (0.0%)
 ```
 
 I welcome all suggestions, bug reports, feature requests and contributions. Please leave an [issue](https://github.com/wdecoster/nanostat/issues) or open a pull request. I will usually respond within a day, or rarely within a few days.
