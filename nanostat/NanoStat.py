@@ -34,6 +34,7 @@ from nanomath import write_stats
 import nanoget
 from argparse import ArgumentParser, HelpFormatter
 import os
+import sys
 from nanostat.version import __version__
 import textwrap as _textwrap
 
@@ -60,7 +61,7 @@ def custom_formatter(prog):
 
 def main():
     args = get_args()
-    if not os.path.exists(args.outdir):
+    if args.outdir and not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
     sources = [args.fastq, args.bam, args.summary, args.fasta]
     sourcename = ["fastq", "bam", "summary", "fasta"]
@@ -75,10 +76,10 @@ def main():
         barcodes = list(datadf["barcode"].unique())
         write_stats(
             datadfs=[datadf[datadf["barcode"] == b] for b in barcodes],
-            outputfile=args.name,
+            outputfile=os.path.join(args.outdir, args.name),
             names=barcodes)
     write_stats(datadfs=[datadf],
-                outputfile=args.name)
+                outputfile=os.path.join(args.outdir, args.name))
 
 
 def get_args():
@@ -102,7 +103,7 @@ def get_args():
                          action="version",
                          version='NanoStat {}'.format(__version__))
     general.add_argument("-o", "--outdir",
-                         help="Specify directory in which output has to be created.",
+                         help="Specify directory for output, only in combination with -n.",
                          default=".")
     general.add_argument("-p", "--prefix",
                          help="Specify an optional prefix to be used for the output file.",
@@ -148,7 +149,13 @@ def get_args():
                          help="Data is in one or more sorted bam file(s).",
                          nargs='+',
                          metavar="file")
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.name == "stdout":
+        if args.outdir != ".":
+            sys.stderr.write("WARNING: -o/--outdir is only possible with -n/--name, ignoring...\n")
+        args.outdir = ''
+
+    return args
 
 
 if __name__ == '__main__':
