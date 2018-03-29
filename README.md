@@ -65,32 +65,32 @@ NanoStat --bam alignment.bam alignment2.bam
 ### Example output
 ```
 General summary:	 
-Number of reads:	3995
-Total bases:	11418359
-Median read length:	1221.0
-Mean read length:	2858.2
-Read length N50:	8676
-Active channels:	933
-Mean read quality:	10.2
-Median read quality:	10.6
-Top 5 longest reads and their mean basecall quality score
-1:	36928 (10.8, [a9dbd2b5-718c-4d0c-afa8-a12a54a5a12a])
-2:	32830 (10.2, [b87fc717-1cf8-4526-9f96-3042fda5b769])
-3:	30474 (12.4, [ea3e43d8-6cbf-4687-95bd-66e6123512d4])
-4:	27531 (12.5, [74c0e08c-eb94-4825-b93b-21d63e05cf14])
-5:	26535 (10.4, [8e6ed505-8477-4462-9f0a-3a72783cbf60])
+Active channels:	502
+Mean read length:	8593.5
+Mean read quality:	10.8
+Median read length:	5168.0
+Median read quality:	11.2
+Number of reads:	408254
+Read length N50:	15141
+Total bases:	3508315665
+Number, percentage and megabases of reads above quality cutoffs
+>Q5:	406428 (99.6%) 3502.0Mb
+>Q7:	395016 (96.8%) 3234.5Mb
+>Q10:	305509 (74.8%) 2475.9Mb
+>Q12:	87903 (21.5%) 422.9Mb
+>Q15:	124 (0.0%) 0.1Mb
 Top 5 highest mean basecall quality scores and their read lengths
-1:	14.8 (1040, [acf6f90b-ea22-4960-8049-6e6e694a3f9a])
-2:	14.7 (9603, [ec796da1-5c4a-4350-974b-6dabb8deb546])
-3:	14.6 (680, [792c485a-81cb-4ef7-8f23-01f10f9c7c23])
-4:	14.5 (2664, [d8092ffb-9919-42fb-ad41-34b1658f1bd5])
-5:	14.5 (909, [d55d3bf6-0729-4b46-82cd-0cef00bcf849])
-Number and percentage of reads above quality cutoffs
->Q5:	3559 (89.1%)
->Q7:	3429 (85.8%)
->Q10:	2705 (67.7%)
->Q12:	1072 (26.8%)
->Q15:	0 (0.0%)
+1:	16.2 (407; a803bcfc-9d7a-4a87-84e4-1a0296113700)
+2:	16.2 (880; f5fee32a-9471-4a68-8697-a71887599757)
+3:	16.1 (729; 3ea23a79-641e-41ab-bb5b-c22609977136)
+4:	16.1 (1057; b0cef5fd-c5e1-4539-9591-b7376b2953e8)
+5:	15.8 (841; 3d4f8075-6151-4147-bdc3-e5d53ff66084)
+Top 5 longest reads and their mean basecall quality score
+1:	255821 (6.8; 7d069f04-d4db-4f12-a1b9-c19d70993492)
+2:	254573 (7.1; a245999b-de28-4720-a8c3-0d5cbb26e473)
+3:	253711 (7.0; a84b106b-13d3-4bfa-b548-71a47c9032c3)
+4:	245784 (7.0; 2a60ee11-8793-46c1-a3d9-667bc4e70405)
+5:	245776 (7.1; 72a8cf33-75fd-4c07-8a4c-7516b690938b)
 ```
 
 I welcome all suggestions, bug reports, feature requests and contributions. Please leave an [issue](https://github.com/wdecoster/nanostat/issues) or open a pull request. I will usually respond within a day, or rarely within a few days.
