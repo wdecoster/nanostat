@@ -9,6 +9,9 @@ Calculate various statistics from a long read sequencing dataset in fastq, bam o
 
 
 ### INSTALLATION
+
+NanoStat is written for Python3 and will not work in Python2.7 or older.
+
 `pip install nanostat`  
 or  
 `conda install -c bioconda nanostat`
