@@ -63,11 +63,17 @@ def main():
     args = get_args()
     if args.outdir and not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
-    sources = [args.fastq, args.bam, args.summary, args.fasta]
-    sourcename = ["fastq", "bam", "summary", "fasta"]
+    sources = {
+        "fastq": args.fastq,
+        "bam": args.bam,
+        "cram": args.cram,
+        "summary": args.summary,
+        "fasta": args.fasta,
+        "ubam": args.ubam,
+    }
     datadf = nanoget.get_input(
-        source=[n for n, s in zip(sourcename, sources) if s][0],
-        files=[f for f in sources if f][0],
+        source=[n for n, s in sources.items() if s][0],
+        files=[f for f in sources.values() if f][0],
         threads=args.threads,
         readtype=args.readtype,
         combine="track",
@@ -147,6 +153,14 @@ def get_args():
                          metavar="file")
     mtarget.add_argument("--bam",
                          help="Data is in one or more sorted bam file(s).",
+                         nargs='+',
+                         metavar="file")
+    mtarget.add_argument("--ubam",
+                         help="Data is in one or more unmapped bam file(s).",
+                         nargs='+',
+                         metavar="file")
+    mtarget.add_argument("--cram",
+                         help="Data is in one or more sorted cram file(s).",
                          nargs='+',
                          metavar="file")
     args = parser.parse_args()
