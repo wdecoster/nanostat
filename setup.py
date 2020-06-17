@@ -16,7 +16,7 @@ setup(
     url='https://github.com/wdecoster/nanostat',
     author='Wouter De Coster',
     author_email='decosterwouter@gmail.com',
-    license='MIT',
+    license='GPLv3',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
@@ -30,7 +30,7 @@ setup(
     keywords='nanopore sequencing statistics',
     packages=find_packages() + ['scripts'],
     python_requires='>=3',
-    install_requires=['nanoget>=1.5.2', 'nanomath>=0.19.0'],
+    install_requires=['nanoget>=1.13.2', 'nanomath>=0.23.3'],
     package_data={'NanoStat': []},
     package_dir={'nanostat': 'nanostat'},
     include_package_data=True,
