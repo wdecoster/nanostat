@@ -63,21 +63,26 @@ def main():
     args = get_args()
     if args.outdir and not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
-    sources = {
-        "fastq": args.fastq,
-        "bam": args.bam,
-        "cram": args.cram,
-        "summary": args.summary,
-        "fasta": args.fasta,
-        "ubam": args.ubam,
-    }
-    datadf = nanoget.get_input(
-        source=[n for n, s in sources.items() if s][0],
-        files=[f for f in sources.values() if f][0],
-        threads=args.threads,
-        readtype=args.readtype,
-        combine="track",
-        barcoded=args.barcoded)
+    if args.feather:
+        from nanoget import combine_dfs
+        from pandas import read_feather
+        datadf = combine_dfs([read_feather(p) for p in args.feather], method="simple")
+    else:
+        sources = {
+            "fastq": args.fastq,
+            "bam": args.bam,
+            "cram": args.cram,
+            "summary": args.summary,
+            "fasta": args.fasta,
+            "ubam": args.ubam,
+        }
+        datadf = nanoget.get_input(
+            source=[n for n, s in sources.items() if s][0],
+            files=[f for f in sources.values() if f][0],
+            threads=args.threads,
+            readtype=args.readtype,
+            combine="track",
+            barcoded=args.barcoded)
     if args.barcoded:
         barcodes = list(datadf["barcode"].unique())
         write_stats(
@@ -161,6 +166,10 @@ def get_args():
                          metavar="file")
     mtarget.add_argument("--cram",
                          help="Data is in one or more sorted cram file(s).",
+                         nargs='+',
+                         metavar="file")
+    mtarget.add_argument("--feather",
+                         help="Data is in one or more feather file(s).",
                          nargs='+',
                          metavar="file")
     args = parser.parse_args()
