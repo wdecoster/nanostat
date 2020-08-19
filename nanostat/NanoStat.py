@@ -90,7 +90,8 @@ def main():
             outputfile=os.path.join(args.outdir, args.name),
             names=barcodes)
     write_stats(datadfs=[datadf],
-                outputfile=os.path.join(args.outdir, args.name))
+                outputfile=os.path.join(args.outdir, args.name),
+                as_tsv=args.tsv)
 
 
 def get_args():
@@ -129,6 +130,9 @@ def get_args():
                          default=4,
                          type=int,
                          metavar="N")
+    general.add_argument("--tsv",
+                         help="Output the stats as a properly formatted TSV.",
+                         action="store_true")
     inputoptions = parser.add_argument_group(
         title='Input options.')
     inputoptions.add_argument("--barcoded",
