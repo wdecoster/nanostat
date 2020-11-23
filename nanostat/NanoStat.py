@@ -82,7 +82,8 @@ def main():
             threads=args.threads,
             readtype=args.readtype,
             combine="track",
-            barcoded=args.barcoded)
+            barcoded=args.barcoded,
+            keep_supp=not(args.no_supplementary))
     if args.barcoded:
         barcodes = list(datadf["barcode"].unique())
         write_stats(
@@ -143,6 +144,10 @@ def get_args():
                               Options are 1D, 2D, 1D2",
                               default="1D",
                               choices=['1D', '2D', '1D2'])
+    inputoptions.add_argument("--no_supplementary",
+                              help="Use if you want to remove supplementary alignments",
+                              action="store_true",
+                              default=False)
     target = parser.add_argument_group(
         title="Input data sources, one of these is required.")
     mtarget = target.add_mutually_exclusive_group(
