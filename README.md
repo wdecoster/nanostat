@@ -32,6 +32,7 @@ General options:
   -p, --prefix PREFIX   Specify an optional prefix to be used for the output file.
   -n, --name NAME       Specify a filename/path for the output, stdout is the default.
   -t, --threads N       Set the allowed number of threads to be used by the script.
+  --tsv,                Print the output in a tab-separated-values format
 
 Input options.:
   --barcoded            Use if you want to split the summary file by barcode
