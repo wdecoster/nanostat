@@ -90,9 +90,10 @@ def main():
             datadfs=[datadf[datadf["barcode"] == b] for b in barcodes],
             outputfile=os.path.join(args.outdir, args.name),
             names=barcodes)
-    write_stats(datadfs=[datadf],
-                outputfile=os.path.join(args.outdir, args.name),
-                as_tsv=args.tsv)
+    else:
+        write_stats(datadfs=[datadf],
+                    outputfile=os.path.join(args.outdir, args.name),
+                    as_tsv=args.tsv)
 
 
 def get_args():
