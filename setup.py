@@ -9,7 +9,7 @@ exec(open('nanostat/version.py').read())
 
 setup(
     name='NanoStat',
-    version=__version__,
+    version=__version__,  # noqa F821
     description='Calculate statistics for Oxford Nanopore sequencing data and alignments',
     long_description=open(path.join(here, "README.md")).read(),
     long_description_content_type="text/markdown",
