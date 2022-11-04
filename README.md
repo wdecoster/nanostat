@@ -1,12 +1,17 @@
 # NanoStat
 
+## NanoStat is largely superseded by [Cramino](https://github.com/wdecoster/cramino) - a much faster alternative - and NanoStat will most probably no longer receive any updates
+
+<br>
+<br>
+<br>
+<br>
+
 Calculate various statistics from a long read sequencing dataset in fastq, bam or albacore sequencing summary format.
 
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/wouter_decoster.svg?style=social&label=Follow%20%40wouter_decoster)](https://twitter.com/wouter_decoster)
 [![install with conda](https://anaconda.org/bioconda/nanostat/badges/installer/conda.svg)](https://anaconda.org/bioconda/nanostat)
 [![Build Status](https://travis-ci.org/wdecoster/nanostat.svg?branch=master)](https://travis-ci.org/wdecoster/nanostat)
-
-
 
 ### INSTALLATION
 
@@ -16,8 +21,8 @@ NanoStat is written for Python3 and will not work in Python2.7 or older.
 or  
 `conda install -c bioconda nanostat`
 
-
 ### USAGE
+
 ```
 NanoStat [-h] [-v] [-o OUTDIR] [-p PREFIX] [-n NAME] [-t N]
                 [--barcoded] [--readtype {1D,2D,1D2}]
@@ -57,6 +62,7 @@ EXAMPLES:
 ```
 
 #### EXAMPLES
+
 ```
 NanoStat --fastq reads.fastq.gz --outdir statreports
 NanoStat --summary sequencing_summary1.txt sequencing_summary2.txt sequencing_summary3.txt --readtype 1D2
@@ -64,38 +70,39 @@ NanoStat --bam alignment.bam alignment2.bam
 ```
 
 ### Example output
+
 ```
-General summary:	 
-Active channels:	502
-Mean read length:	8593.5
-Mean read quality:	10.8
-Median read length:	5168.0
-Median read quality:	11.2
-Number of reads:	408254
-Read length N50:	15141
-Total bases:	3508315665
+General summary:  
+Active channels: 502
+Mean read length: 8593.5
+Mean read quality: 10.8
+Median read length: 5168.0
+Median read quality: 11.2
+Number of reads: 408254
+Read length N50: 15141
+Total bases: 3508315665
 Number, percentage and megabases of reads above quality cutoffs
->Q5:	406428 (99.6%) 3502.0Mb
->Q7:	395016 (96.8%) 3234.5Mb
->Q10:	305509 (74.8%) 2475.9Mb
->Q12:	87903 (21.5%) 422.9Mb
->Q15:	124 (0.0%) 0.1Mb
+>Q5: 406428 (99.6%) 3502.0Mb
+>Q7: 395016 (96.8%) 3234.5Mb
+>Q10: 305509 (74.8%) 2475.9Mb
+>Q12: 87903 (21.5%) 422.9Mb
+>Q15: 124 (0.0%) 0.1Mb
 Top 5 highest mean basecall quality scores and their read lengths
-1:	16.2 (407; a803bcfc-9d7a-4a87-84e4-1a0296113700)
-2:	16.2 (880; f5fee32a-9471-4a68-8697-a71887599757)
-3:	16.1 (729; 3ea23a79-641e-41ab-bb5b-c22609977136)
-4:	16.1 (1057; b0cef5fd-c5e1-4539-9591-b7376b2953e8)
-5:	15.8 (841; 3d4f8075-6151-4147-bdc3-e5d53ff66084)
+1: 16.2 (407; a803bcfc-9d7a-4a87-84e4-1a0296113700)
+2: 16.2 (880; f5fee32a-9471-4a68-8697-a71887599757)
+3: 16.1 (729; 3ea23a79-641e-41ab-bb5b-c22609977136)
+4: 16.1 (1057; b0cef5fd-c5e1-4539-9591-b7376b2953e8)
+5: 15.8 (841; 3d4f8075-6151-4147-bdc3-e5d53ff66084)
 Top 5 longest reads and their mean basecall quality score
-1:	255821 (6.8; 7d069f04-d4db-4f12-a1b9-c19d70993492)
-2:	254573 (7.1; a245999b-de28-4720-a8c3-0d5cbb26e473)
-3:	253711 (7.0; a84b106b-13d3-4bfa-b548-71a47c9032c3)
-4:	245784 (7.0; 2a60ee11-8793-46c1-a3d9-667bc4e70405)
-5:	245776 (7.1; 72a8cf33-75fd-4c07-8a4c-7516b690938b)
+1: 255821 (6.8; 7d069f04-d4db-4f12-a1b9-c19d70993492)
+2: 254573 (7.1; a245999b-de28-4720-a8c3-0d5cbb26e473)
+3: 253711 (7.0; a84b106b-13d3-4bfa-b548-71a47c9032c3)
+4: 245784 (7.0; 2a60ee11-8793-46c1-a3d9-667bc4e70405)
+5: 245776 (7.1; 72a8cf33-75fd-4c07-8a4c-7516b690938b)
 ```
 
 I welcome all suggestions, bug reports, feature requests and contributions. Please leave an [issue](https://github.com/wdecoster/nanostat/issues) or open a pull request. I will usually respond within a day, or rarely within a few days.
 
-
 ## CITATION
+
 If you use this tool, please consider citing our [publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939).
